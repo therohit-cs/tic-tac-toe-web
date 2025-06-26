@@ -24,10 +24,12 @@ boxes.forEach((box) => {
             //playerB
             turnB=false;
             box.innerText="O";
+            box.style.backgroundColor="#3eaf9e";
         } else {
             //playerA
             turnB=true;
             box.innerText="X";
+            box.style.backgroundColor="#af3e4d";
         }
         box.disabled=true;
 
@@ -66,6 +68,9 @@ const resetBoxes = () =>{
        count=0;
        enableBoxes();
        msgContainer.classList.add("hide");
+       for(let box of boxes) {
+       box.style.backgroundColor="";
+       }
 };  
 
 const showWinner = (winner) =>{
